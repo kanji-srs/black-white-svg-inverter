@@ -16,7 +16,8 @@ steps:
     cd swift-install
     wget https://swift.org/builds/swift-5.1.3-release/ubuntu1804/swift-5.1.3-RELEASE/swift-5.1.3-RELEASE-ubuntu18.04.tar.gz
     tar -xvzf swift-5.1.3-RELEASE*
-    export PATH=$(pwd)/swift-5.1.3-RELEASE-ubuntu18.04
+    pwd
+    export PATH=$PATH:$(pwd)/swift-5.1.3-RELEASE-ubuntu18.04
     swift -version
   displayName: 'Install Swift'
 
