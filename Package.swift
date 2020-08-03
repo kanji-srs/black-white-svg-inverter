@@ -5,6 +5,10 @@ import PackageDescription
 
 let package = Package(
     name: "SVGInverter",
+    products: [
+        .executable(name: "SVGInverter", targets: ["SVGInverter"]),
+        .library(name: "SVGInverterLibrary", targets: ["SVGInverterLibrary"]),
+    ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
@@ -14,9 +18,12 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "SVGInverter",
+            dependencies: ["SVGInverterLibrary"]),
+        .target(
+            name: "SVGInverterLibrary",
             dependencies: []),
         .testTarget(
             name: "SVGInverterTests",
-            dependencies: ["SVGInverter"]),
+            dependencies: ["SVGInverterLibrary"]),
     ]
 )
